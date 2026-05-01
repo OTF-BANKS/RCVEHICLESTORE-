@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RCVEHICLESTORE</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">RCVEHICLESTORE</h1>
+      <div class="search-cart">
+        <input id="searchInput" type="search" placeholder="Search vehicles or parts..." />
+        <button id="cartButton" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+    <nav class="nav container">
+      <button class="filter-btn" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cars">Cars</button>
+      <button class="filter-btn" data-filter="trucks">Trucks</button>
+      <button class="filter-btn" data-filter="boats">Boats</button>
+      <button class="filter-btn" data-filter="drones">Drones</button>
+      <button class="filter-btn" data-filter="parts">Parts</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="productsSection" class="products-grid" aria-live="polite">
+      <!-- Products loaded dynamically -->
+    </section>
+
+    <section id="productDetail" class="product-detail hidden">
+      <button id="closeDetail" class="close-btn">Close</button>
+      <div class="detail-inner"></div>
+    </section>
+
+    <aside id="cartPanel" class="cart-panel hidden">
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <div class="cart-summary">
+        <div>Total: $<span id="cartTotal">0.00</span></div>
+        <button id="checkoutBtn" class="primary">Checkout</button>
+        <button id="clearCartBtn" class="muted">Clear Cart</button>
+      </div>
+    </aside>
+
+    <section id="checkoutSection" class="checkout hidden">
+      <h2>Checkout</h2>
+      <form id="checkoutForm">
+        <div class="form-row">
+          <label>Name <input name="name" required /></label>
+          <label>Email <input name="email" type="email" required /></label>
+        </div>
+        <div class="form-row">
+          <label>Address <input name="address" required /></label>
+          <label>City <input name="city" required /></label>
+        </div>
+        <div class="form-row">
+          <label>Card (simulated) <input name="card" required placeholder="4242 4242 4242 4242" /></label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="primary">Place Order</button>
+          <button id="cancelCheckout" type="button" class="muted">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="message" class="message hidden"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> RCVEHICLESTORE — Small demo store for RC vehicles & accessories.</p>
+      <p>Made with ♥ — contact: support@rcvehiclestore.example</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
